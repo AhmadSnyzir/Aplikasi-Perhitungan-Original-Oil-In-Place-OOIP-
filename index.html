@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>OOIP(Original Oil In Place) Calculator</title>
+</head>
+<body>
+    <div class="container">
+        <h1>OOIP Calculator</h1>
+        <div class="input-section">
+            <label for="calculation-method">Select Calculation Method:</label>
+            <select id="calculation-method">
+                <option value="volume">Volume Reservoir</option>
+                <option value="area-thickness">Area & Thickness</option>
+            </select>
+            <div id="volume-inputs">
+                <label for="volume">Volume Reservoir (V):</label>
+                <input type="number" id="volume" placeholder="Enter Volume Reservoir in acres-ft">
+            </div>
+            <div id="area-thickness-inputs" class="hidden">
+                <label for="area">Area (A):</label>
+                <input type="number" id="area" placeholder="Enter Area in acres">
+                <label for="thickness">Thickness (h):</label>
+                <input type="number" id="thickness" placeholder="Enter Thickness in ft">
+            </div>
+            <label for="porosity">Porosity (Φ):</label>
+            <input type="number" id="porosity" placeholder="Enter Porosity (0-1)">
+            <label for="oil-saturation">Oil Saturation (Sᵒ):</label>
+            <input type="number" id="oil-saturation" placeholder="Enter Oil Saturation (0-1)">
+            <label for="formation-factor">Formation Volume Factor(B):</label>
+            <input type="number" id="formation-factor" placeholder="Enter Formation Volume Factor in Bbl/STB">
+            <button id="calculate-btn">Calculate OOIP</button>
+        </div>
+        <div class="result-section">
+            <h2 id="ooip-result">OOIP: -</h2>
+            <canvas id="ooip-chart"></canvas>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
